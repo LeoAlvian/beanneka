@@ -1,0 +1,18 @@
+:root {
+    --sidebar-bg-color: #2f855a;
+    --sidebar-item-hover: #38a169;
+    --sidebar-item-active: #114e33;
+
+    --coffee: #3f251b;
+    --caramel : #573318;
+    --latte : #ecedf8;
+    --darkBlue : #1e2227;
+    --blue : #1c1c29;
+    --blue2 : #23272e;
+    --lightGray : #323842;
+    --fountainBlue : #1ba8b3;
+    --malibu : #61afef;
+    --coral : #ef596f;
+    --deepRed : #be5046;
+    --dark : #161618;
+}

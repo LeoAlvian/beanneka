@@ -1,5 +1,5 @@
 <template>
-  Home
+  Analytics
 </template>
 
 <script>
