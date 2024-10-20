@@ -1,6 +1,7 @@
 <template>
   <router-link :to="to" class="link" :class="{ active: isActive }">
     <i class="icon" :class="icon" />
+    <div class="circle"></div>
     <transition name="fade">
         <span v-if="!collapsed">
             <slot />
@@ -43,25 +44,25 @@ export default {
     padding: 0.4rem 0.4rem 0.4rem 0.6rem;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
-    height: 2.5rem;
+    height: 3rem;
 
     color: var(--blue2);
     text-decoration: none;
+
+
 }
 
 .link:hover {
-    background-color: var(--blue2);
-    color: var(--latte);
+    /* background-color: var(--blue2); */
+    color: var(--deepRed);
 }
 
 
 .router-link-active.router-link-exact-active.link{
+    position: relative;
     background-color: var(--blue2);
-    color: var(--latte)
-}
+    color: var(--latte);
 
-.router-link-active.router-link-exact-active.link:hover{
-    color: var(--latte); 
 }
 
 .router-link-active.router-link-exact-active.link::before {
@@ -73,6 +74,7 @@ export default {
     height: 10px;
     border-bottom-right-radius: 50px;
     box-shadow: 5px 5px 0 5px var(--blue2);
+
 }
 
 .router-link-active.router-link-exact-active.link::after {
@@ -84,12 +86,32 @@ export default {
     height: 10px;
     border-top-right-radius: 50px;
     box-shadow: 5px -5px 0 5px var(--blue2);
+
 }
 
-.link .icon {
-    flex-shrink: 0;
-    width: 25px;
+.icon {
+    width: 30px;
     margin-right: 10px;
+    z-index: 3;
+}
+
+.router-link-active.router-link-exact-active.link .icon {
+    color: var(--blue2);
+}
+
+.router-link-active.router-link-exact-active.link .circle::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    width: 2.6rem;
+    background: var(--latte);
+    border-radius: 50%;
+    transition: 500ms;
+    z-index: 2;
+}
+
+.router-link-active.router-link-exact-active.link:hover .circle::before {
+    background: var(--deepRed);
 }
 
 .fade-enter-active,
