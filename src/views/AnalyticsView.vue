@@ -28,6 +28,15 @@
           <p>: {{ bean.inDate }}</p>
         </div>
       </div>
+      <hr>
+      <div class="action-btn">
+        <div class="add-quantity">
+          <button class="btn quantity"><i class="fa-solid fa-minus"></i></button>
+          <p>100</p>
+          <button class="btn quantity"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <button class="btn buy">Buy</button>
+      </div>
     </div>
   </div>
 </template>
@@ -51,7 +60,8 @@ export default {
         imgUrl: 'Honey100gr',
         beanType: 'Arabica',
         coffeeCategory: 'Single Origin',
-        package: 100
+        package: 100,
+        type: 'Sigaruntang'
       },
       {
         id: 'PMW1024',
@@ -64,7 +74,8 @@ export default {
         imgUrl: 'Wine100gr',
         beanType: 'Arabica',
         coffeeCategory: 'Single Origin',
-        package: 100
+        package: 100,
+        type: 'Sigaruntang'
       },
       {
         id: 'PMN1024',
@@ -77,7 +88,8 @@ export default {
         imgUrl: 'Natural100gr',
         beanType: 'Arabica',
         coffeeCategory: 'Single Origin',
-        package: 100
+        package: 100,
+        type: 'Sigaruntang'
       },
   ])
 
@@ -160,7 +172,7 @@ export default {
 .detail-product {
   display: flex;
   font-size: 12px;
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 
 .detail-product-left {
@@ -176,6 +188,49 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.action-btn {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.add-quantity {
+  display: flex;
+  gap: .5rem;
+}
+
+.btn {
+  border: 1px solid var(--latte);
+  color: var(--blue2);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.quantity:hover {
+  background-color: var(--blue2);
+  color: var(--latte);
+}
+
+.quantity {
+  padding: .4rem;
+}
+
+.add-quantity p {
+  padding: .4rem 0;
+}
+
+.buy {
+  padding: .4rem 2rem;
+  background-color: var(--blue2);
+  color: var(--latte);
+}
+
+.buy:hover {
+  color: var(--blue2);
+  background-color: var(--latte);
+  border: 1px solid var(--blue2);
 }
 
 </style>
